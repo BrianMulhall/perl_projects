@@ -11,3 +11,4 @@ my @arr = (1,2,3,'brian','isabelle',5.50,10.001);
 
 say $arr[3];
 say $arr[4];
+say $arr[5];
