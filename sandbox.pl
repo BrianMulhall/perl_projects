@@ -1,14 +1,14 @@
 use strict;
 use warnings;
+use Readonly;
 use v5.28.1;
 
-my @arr = (1,2,3,'brian','isabelle',5.50,10.001);
+Readonly my $SPACE => q{ };
+Readonly my $EMPTY_STR => q{};
 
-# foreach my $a (@arr){
-# 	print $a."\n";
-# }
+my $name_first = "Brian";
+my $name_last = "Mulhall";
 
 
-say $arr[3];
-say $arr[4];
-say $arr[5];
+say qq{interpolated string with \'$name_first $name_last\'};
+
