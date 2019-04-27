@@ -1,20 +1,19 @@
 use strict;
 use warnings;
-use v5.28.1;
-use List::Util qw(min shuffle);
 
+my $lat_lower_limit = 32;
+my $lat_upper_limit = 42;
+my $long_lower_limit = 80;
+my $long_upper_limit = 100;
 
-my @numbers = (1..99);
+my $random_long = (rand($long_upper_limit-$long_lower_limit)) + $long_lower_limit;
 
-@numbers = map {$_ * 5} @numbers;
+$random_long = $random_long * (-1);
 
-@numbers = grep { $_ > 480 && $_ < 490} @numbers;
+my $random_lat = (rand($lat_upper_limit-$lat_lower_limit)) + $lat_lower_limit;
 
-@numbers = shuffle @numbers;
+$random_lat = sprintf("%.9f", $random_lat);
+$random_long = sprintf("%.9f", $random_long);
 
-foreach my $n (@numbers){
-
-	say "the number is " . $n;
-
-}
-
+print "Longitude: "  . $random_long . "\n";
+print "Longitude: "  . $random_lat . "\n";
