@@ -1,21 +1,19 @@
-#!/usr/bin/perl
-
-use 5.010;
 use strict;
 use warnings;
-use open ':encoding(utf8)';   # would mess up XML file
-binmode(STDOUT, ':utf8');
+use v5.28.1;
 
 use XML::LibXML;
 
+
 my $filename = 'carte-latin1.xml';
-open my $fh, '<', $filename;  # affected by 'use open' above
-binmode $fh, ':raw';          # turn off effects of 'use open'
+
+open my $fh, '<', $filename;
+
 
 my $dom = XML::LibXML->load_xml(IO => $fh);
 
-foreach my $course ($dom->findnodes('//cours')) {
-    say $course->{nom};
+foreach my $course ($dom->findnodes('/carte/cours')) {
+    say $course->{nom}; # gets the attribute
     foreach my $dish ($course->findnodes('./plat')) {
         say "* " . $dish->to_literal();
     }

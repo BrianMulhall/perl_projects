@@ -1,14 +1,20 @@
 use strict;
 use warnings;
-use Readonly;
 use v5.28.1;
-
-Readonly my $SPACE => q{ };
-Readonly my $EMPTY_STR => q{};
-
-my $name_first = "Brian";
-my $name_last = "Mulhall";
+use List::Util qw(min shuffle);
 
 
-say qq{interpolated string with \'$name_first $name_last\'};
+my @numbers = (1..99);
+
+@numbers = map {$_ * 5} @numbers;
+
+@numbers = grep { $_ > 480 && $_ < 490} @numbers;
+
+@numbers = shuffle @numbers;
+
+foreach my $n (@numbers){
+
+	say "the number is " . $n;
+
+}
 

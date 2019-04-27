@@ -10,7 +10,10 @@ my $filename = 'playlist.xml';
 
 my $dom = XML::LibXML->load_xml(location => $filename);
 
-foreach my $title ($dom->findnodes('/playlist/movie/title')) {
-    say $title->to_literal();
+#finding the nodes by an XPath query
+foreach my $movie ($dom->findnodes('/playlist/movie')) {
+
+    say $movie->to_literal();
+
 }
 
