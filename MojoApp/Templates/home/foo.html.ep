@@ -1,0 +1,3 @@
+% layout 'shared_layout', title => 'Foo';
+
+<div id="mainDiv" class="row">This is the stuff in the Foo page only</div>
