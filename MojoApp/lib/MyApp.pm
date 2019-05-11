@@ -11,12 +11,19 @@ sub startup {
   # Configure the application
   $self->secrets($config->{secrets});
 
+
+  my $log = $self->log;
+  $log->debug('It works');
+
+
   # Router
   my $r = $self->routes;
-
   # Normal route to controller
-  $r->get('/foo')->to('home#foo');
-  $r->get('/time')->to('home#time');
+  $r->get('/')->to(controller => 'home', action => 'index');
+  $r->get('/foo')->to(controller => 'home', action => 'foo');
+  $r->get('/time')->to(controller => 'home', action => 'time');
+
+  
 }
 
 1;
