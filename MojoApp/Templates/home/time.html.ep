@@ -1,9 +1,0 @@
-% layout 'shared_layout', title => 'Time';
-
-
-% use Time::Piece;
-% my $now = localtime;
-
-<div class="row">
-  The time is <%= $now->hms %>.
-</div>

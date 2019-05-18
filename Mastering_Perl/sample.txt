@@ -1,8 +1,0 @@
-This is the sample text
-that is used to write to file.
-It is some lorem ipsum
-Type text but
-its prety cool how perl works
-in this way. Making it easy
-to practice my typing in this way
-so yay baby
