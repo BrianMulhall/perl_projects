@@ -1,25 +1,35 @@
 use warnings;
 use strict;
-use List::Util qw(
-      reduce any all none notall first
-      max maxstr min minstr product sum sum0
-      pairs unpairs pairkeys pairvalues pairfirst pairgrep pairmap
-      shuffle uniq uniqnum uniqstr
-    );
 use v5.28.1;
 
+my @palindromes = ();
+foreach my $i (100..999){
+  foreach my $j (100..999){
+      my $product = $i * $j;
+      if(check_palindrome($product)){
+          push @palindromes, $product;
+      }
 
-my $run_sum = 0;
-
-foreach my $i (1..999){
-  if($i % 3 == 0){ 
-    $run_sum += $i;
   }
-  elsif ($i % 5 == 0){
-   $run_sum += $i;
- }
+  
 }
 
+say @palindromes[-1];
 
-print "the sum is $run_sum\n";
+
+sub check_palindrome{
+  my($i) = @_;
+  my $str_len = length $i;
+
+  if($str_len % 2 == 0){
+    my $m;
+    my $n;
+    while($m < $n){
+      if()
+    }
+  }
+
+
+}
+
 
